@@ -14,5 +14,4 @@ export type TodosItemProps = {
 
 export type TodoProps = {
   todo: TodosItemProps;
-  handleDeleteTodo: (id: string | number) => void;
 };
