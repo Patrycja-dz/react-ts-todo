@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { TodosProps } from "../../../types";
+import { TodosProps } from "../../models/todo";
 
 const Todos: FC<TodosProps> = ({ todos, todosItemFn, children }) => {
   const completedTodoList = todos.filter((todo) => {
@@ -14,7 +14,7 @@ const Todos: FC<TodosProps> = ({ todos, todosItemFn, children }) => {
 
   return (
     <ul>
-      {completedTodoList.map((item) => (
+      {allTodos.map((item) => (
         <li key={todosItemFn(item)}>{children(item)}</li>
       ))}
     </ul>
