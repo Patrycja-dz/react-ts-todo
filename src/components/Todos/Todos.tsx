@@ -15,7 +15,9 @@ const Todos: FC<TodosProps> = ({ todos, todosItemFn, children }) => {
   return (
     <ul>
       {allTodos.map((item) => (
-        <li key={todosItemFn(item)}>{children(item)}</li>
+        <li key={todosItemFn(item)} style={{ listStyleType: "none" }}>
+          {children(item)}
+        </li>
       ))}
     </ul>
   );

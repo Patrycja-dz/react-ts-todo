@@ -14,11 +14,16 @@ function App() {
 
     setTodos((prevTodos) => [...prevTodos, newTodo]);
   };
+
+  const deleteTodoHandler = (id: string | number) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <>
       <NewTodo onAddTodo={addTodoHandler} />
       <Todos todos={todos} todosItemFn={(todo) => todo.id}>
-        {(todo) => <Todo todo={todo} />}
+        {(todo) => <Todo todo={todo} handleDeleteTodo={deleteTodoHandler} />}
       </Todos>
     </>
   );
